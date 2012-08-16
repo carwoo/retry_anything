@@ -4,7 +4,7 @@ Description and usage:
 
     require 'retry_anything'
 
-    RetryAnything.perform(RuntimeError, :retries => 2, lambda { Logger.error 'Failed' }) do
+    RetryAnything.perform(RuntimeError, :retries => 2, :callback => lambda { Logger.error 'Failed' }) do
       # Do something that fails intermittently
     end
 
